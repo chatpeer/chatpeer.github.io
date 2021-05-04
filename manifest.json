@@ -1,0 +1,32 @@
+{
+  "index.html": {
+    "file": "assets/index.eb97050c.js",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_main.42f77aa3.js",
+      "_vendor.207059ea.js"
+    ]
+  },
+  "old.html": {
+    "file": "assets/old.e98d69fc.js",
+    "src": "old.html",
+    "isEntry": true,
+    "imports": [
+      "_main.42f77aa3.js",
+      "_vendor.207059ea.js"
+    ]
+  },
+  "_vendor.207059ea.js": {
+    "file": "assets/vendor.207059ea.js"
+  },
+  "_main.42f77aa3.js": {
+    "file": "assets/main.42f77aa3.js",
+    "imports": [
+      "_vendor.207059ea.js"
+    ],
+    "css": [
+      "assets/main.d596974a.css"
+    ]
+  }
+}

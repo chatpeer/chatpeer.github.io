@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Primary Meta Tags -->
+  <title>The Chat Private Perfect</title>
+  <meta name="title" content="The Chat Private Perfect">
+  <meta name="description" content="Peer-to-peer chat absolutely confidential">
+  <meta name="keywords" content="peer to peer chat, chat private, no storage">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Chat Private Perfect">
+  <meta property="og:description" content="Peer-to-peer chat absolutely confidential">
+  <meta property="og:image" content="https://kimthiendung.github.io/img/avatar.jpg">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="The Chat Private Perfect">
+  <meta property="twitter:description" content="Peer-to-peer chat absolutely confidential">
+  <meta property="twitter:image" content="https://kimthiendung.github.io/img/avatar.jpg">
+<script type="module" crossorigin src="/assets/index.eb97050c.js"></script>
+  <link rel="modulepreload" href="/assets/main.42f77aa3.js">
+  <link rel="modulepreload" href="/assets/vendor.207059ea.js">
+  <link rel="stylesheet" href="/assets/main.d596974a.css">
+</head>
+
+<body>
+  <div class="flex w-screen h-screen justify-center overflow-x-hidden" id="app" v-if="isShow">
+    <div class="flex flex-col items-center w-full sm:w-1/2 md:w-2/5 h-full">
+      <div class="flex flex-col flex-grow w-full max-w-xl bg-white shadow-xl overflow-hidden" id="app-chat">
+        
+        <div class="bg-gray-700">
+          <div class="flex items-center justify-between">
+            <div class="flex -space-x-2 p-2">
+              <a href="#" class="">
+                <img class="inline-block h-8 w-8 rounded-full object-cover ring-2 ring-white" src="/imgs/user.svg"
+                  alt="Guy" />
+              </a>
+              <a href="#" class="" v-if="peerSuccess">
+                <img class="inline-block h-8 w-8 rounded-full object-cover ring-2 ring-white" src="/imgs/user.svg"
+                  alt="Guy" />
+              </a>
+            </div>
+            <div class="flex items-center justify-between p-0.5">
+              <copy :value="link"></copy>
+              <canvas id="qr" class="h-12 w-12 bg-gray-900"></canvas>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex flex-col flex-grow h-0 p-4 overflow-auto">
+          <message v-for="(val, key) in list" :key="key" :value="val.text" :owner="val.owner" :time="val.time" />
+        </div>
+
+        <div class="bg-gray-200 p-4 flex">
+          <input v-model="input" v-on:keyup.enter="submit" class="w-full p-2 focus:outline-none text-sm" type="text" placeholder="Username">
+          <button class="flex items-center justify-center border-l-0 py-1 px-2 text-gray-700 bg-blue-300" @click="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M21.426,11.095l-17-8c-0.35-0.164-0.763-0.113-1.061,0.133C3.066,3.473,2.937,3.868,3.03,4.242l1.212,4.849L12,12 l-7.758,2.909L3.03,19.758c-0.094,0.374,0.036,0.77,0.335,1.015C3.548,20.923,3.772,21,4,21c0.145,0,0.29-0.031,0.426-0.095l17-8 C21.776,12.74,22,12.388,22,12S21.776,11.26,21.426,11.095z"></path></svg>
+          </button>
+          
+          <!-- <input v-model="input" v-on:keyup.enter="submit"  class="text-sm rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Type your message…"/>
+		<button class="px-8 rounded-r-lg bg-yellow-400  text-gray-800 font-bold p-4 uppercase border-yellow-500 border-t border-b border-r">Subscribe</button> -->
+          <!-- <input v-model="input" v-on:keyup.enter="submit" class="flex items-center h-10 w-full px-3 text-sm" type="text" placeholder="Type your message…"> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="/js/peerjs.min.js"></script>
+
+
+</html>
