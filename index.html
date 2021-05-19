@@ -5,72 +5,290 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Primary Meta Tags -->
-  <title>The Chat Private Perfect</title>
-  <meta name="title" content="The Chat Private Perfect">
-  <meta name="description" content="Peer-to-peer chat absolutely confidential">
-  <meta name="keywords" content="peer to peer chat, chat private, no storage">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="The Chat Private Perfect">
-  <meta property="og:description" content="Peer-to-peer chat absolutely confidential">
-  <meta property="og:image" content="https://kimthiendung.github.io/img/avatar.jpg">
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="The Chat Private Perfect">
-  <meta property="twitter:description" content="Peer-to-peer chat absolutely confidential">
-  <meta property="twitter:image" content="https://kimthiendung.github.io/img/avatar.jpg">
-<script type="module" crossorigin src="/assets/index.227d7a71.js"></script>
-  <link rel="modulepreload" href="/assets/main.e8de8a83.js">
-  <link rel="modulepreload" href="/assets/vendor.207059ea.js">
-  <link rel="stylesheet" href="/assets/main.09ac40d7.css">
+  <title>Tailwind Css</title>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+<script type="module" crossorigin src="/assets/index.00f54bac.js"></script>
+  <link rel="modulepreload" href="/assets/vendor.1c3334d4.js">
+  <link rel="stylesheet" href="/assets/index.3ce0377e.css">
 </head>
 
 <body>
-  <div class="flex w-screen h-screen justify-center overflow-x-hidden" id="app" v-if="isShow">
-    <div class="flex flex-col items-center w-full sm:w-1/2 md:w-2/5 h-full">
-      <div class="flex flex-col flex-grow w-full max-w-xl bg-white shadow-xl overflow-hidden" id="app-chat">
-        
-        <div class="bg-gray-700">
-          <div class="flex items-center justify-between">
-            <div class="flex -space-x-2 p-2">
-              <a href="#" class="">
-                <img class="inline-block h-8 w-8 rounded-full object-cover ring-2 ring-white" src="/imgs/user.svg"
-                  alt="Guy" />
-              </a>
-              <a href="#" class="" v-if="peerSuccess">
-                <img class="inline-block h-8 w-8 rounded-full object-cover ring-2 ring-white" src="/imgs/user.svg"
-                  alt="Guy" />
-              </a>
+  <div class="overflow-hidden" :class="{'dark': dark}" id="app" x-data="{..._sb(), ..._sm()}" x-init="_sb_init">
+    <header class="flex w-full shadow-lg bg-white text-gray-700 dark:bg-gray-800 dark:text-gray-100 h-16 z-40"
+      id="header">
+      <div class="flex items-center w-80 h-full">
+        <button class="mx-2 p-2 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none rounded-full"
+          x-spread="_sm_trigger">
+          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"></path>
+          </svg>
+        </button>
+
+        <span class="text-2xl">
+          Chat App
+        </span>
+      </div>
+      <div class="flex flex-grow items-center pl-6 justify-between">
+        <div>
+        </div>
+        <div class="flex items-center">
+          <div class="relative inline-block text-left" x-data="_dd()">
+            <div>
+              <button type="button"
+                class="border-2 border-gray-900 bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center w-full rounded-md  px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-500 focus:outline-none"
+                id="options-menu" x-spread="_dd_trigger">
+                Pay with
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 1792 1792"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1408 704q0 26-19 45l-448 448q-19 19-45 19t-45-19l-448-448q-19-19-19-45t19-45 45-19h896q26 0 45 19t19 45z">
+                  </path>
+                </svg>
+              </button>
             </div>
-            <div class="flex items-center justify-between p-0.5">
-              <copy :value="link"></copy>
-              <canvas id="qr" class="h-12 w-12 bg-gray-900"></canvas>
+            <div
+              class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-900 ring-1 ring-black ring-opacity-5"
+              x-spread="_dd_main" x-cloak>
+              <div class="py-1 divide-y divide-gray-500" role="menu" aria-orientation="vertical"
+                aria-labelledby="options-menu">
+                <a href="#"
+                  class="flex items-center px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-100 dark:hover:bg-gray-600"
+                  role="menuitem">
+                  <svg width="20" height="20" fill="currentColor" class="dark:text-gray-100 flex-shrink-0 h-6 w-6 mr-2"
+                    viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1597 903q0 69-21 106-19 35-52 35-23 0-41-9v-224q29-30 57-30 57 0 57 122zm438-36h-110q6-98 56-98 51 0 54 98zm-1559 135q0-59-33-91.5t-101-57.5q-36-13-52-24t-16-25q0-26 38-26 58 0 124 33l18-112q-67-32-149-32-77 0-123 38-48 39-48 109 0 58 32.5 90.5t99.5 56.5q39 14 54.5 25.5t15.5 27.5q0 31-48 31-29 0-70-12.5t-72-30.5l-18 113q72 41 168 41 81 0 129-37 51-41 51-117zm295-215l19-111h-96v-135l-129 21-18 114-46 8-17 103h62v219q0 84 44 120 38 30 111 30 32 0 79-11v-118q-32 7-44 7-42 0-42-50v-197h77zm316 25v-139q-15-3-28-3-32 0-55.5 16t-33.5 46l-10-56h-131v471h150v-306q26-31 82-31 16 0 26 2zm37 335h150v-471h-150v471zm622-249q0-122-45-179-40-52-111-52-64 0-117 56l-8-47h-132v645l150-25v-151q36 11 68 11 83 0 134-56 61-65 61-202zm-468-348q0-33-23-56t-56-23-56 23-23 56 23 56.5 56 23.5 56-23.5 23-56.5zm898 357q0-113-48-176-50-64-144-64-96 0-151.5 66t-55.5 180q0 128 63 188 55 55 161 55 101 0 160-40l-16-103q-57 31-128 31-43 0-63-19-23-19-28-66h248q2-14 2-52zm128-651v1280q0 52-38 90t-90 38h-2048q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h2048q52 0 90 38t38 90z">
+                    </path>
+                  </svg>
+                  <span class="flex flex-col">
+                    <span>
+                      Stripe
+                    </span>
+                  </span>
+                </a>
+                <a href="#"
+                  class="flex items-center px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-100 dark:hover:bg-gray-600"
+                  role="menuitem">
+                  <svg width="20" height="20" fill="currentColor" class="dark:text-gray-100 flex-shrink-0 h-6 w-6 mr-2"
+                    viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1119 341q-128-85-281-85-103 0-197.5 40.5t-162.5 108.5-108.5 162-40.5 197q0 104 40.5 198t108.5 162 162 108.5 198 40.5q153 0 281-85-131-107-178-265.5t.5-316.5 177.5-265zm33 24q-126 99-172 249.5t-.5 300.5 172.5 249q127-99 172.5-249t-.5-300.5-172-249.5zm33-24q130 107 177.5 265.5t.5 317-178 264.5q128 85 281 85 104 0 198-40.5t162-108.5 108.5-162 40.5-198q0-103-40.5-197t-108.5-162-162.5-108.5-197.5-40.5q-153 0-281 85zm741 722h7v-3h-17v3h7v17h3v-17zm29 17h4v-20h-5l-6 13-6-13h-5v20h3v-15l6 13h4l5-13v15zm-8 440v2h-5v-3h5v1zm0 9h3l-4-5h2l1-1q1-1 1-3t-1-3l-1-1h-9v13h3v-5h1zm-1262-68q0-19 11-31t30-12q18 0 29 12.5t11 30.5q0 19-11 31t-29 12q-19 0-30-12t-11-31zm473-44q30 0 35 32h-70q5-32 35-32zm356 44q0-19 11-31t29-12 29.5 12.5 11.5 30.5q0 19-11 31t-30 12q-18 0-29-12t-11-31zm272 0q0-18 11.5-30.5t29.5-12.5 29.5 12.5 11.5 30.5q0 19-11.5 31t-29.5 12-29.5-12.5-11.5-30.5zm158 72q-2 0-4-1-1 0-3-2t-2-3q-1-2-1-4 0-3 1-4 0-2 2-4l1-1q2 0 2-1 2-1 4-1 3 0 4 1l4 2 2 4v1q1 2 1 3l-1 1v3l-1 1-1 2q-2 2-4 2-1 1-4 1zm-1345-4h30v-85q0-24-14.5-38.5t-39.5-15.5q-32 0-47 24-14-24-45-24-24 0-39 20v-16h-30v135h30v-75q0-36 33-36 30 0 30 36v75h29v-75q0-36 33-36 30 0 30 36v75zm166 0h29v-135h-29v16q-17-20-43-20-29 0-48 20t-19 51 19 51 48 20q28 0 43-20v17zm178-41q0-34-47-40l-14-2q-23-4-23-14 0-15 25-15 23 0 43 11l12-24q-22-14-55-14-26 0-41 12t-15 32q0 33 47 39l13 2q24 4 24 14 0 17-31 17-25 0-45-14l-13 23q25 17 58 17 29 0 45.5-12t16.5-32zm130 34l-8-25q-13 7-26 7-19 0-19-22v-61h48v-27h-48v-41h-30v41h-28v27h28v61q0 50 47 50 21 0 36-10zm86-132q-29 0-48 20t-19 51q0 32 19.5 51.5t49.5 19.5q33 0 55-19l-14-22q-18 15-39 15-34 0-41-33h101v-12q0-32-18-51.5t-46-19.5zm159 0q-23 0-35 20v-16h-30v135h30v-76q0-35 29-35 10 0 18 4l9-28q-9-4-21-4zm30 71q0 31 19.5 51t52.5 20q29 0 48-16l-14-24q-18 13-35 12-18 0-29.5-12t-11.5-31 11.5-31 29.5-12q19 0 35 12l14-24q-20-16-48-16-33 0-52.5 20t-19.5 51zm245 68h30v-135h-30v16q-15-20-42-20-29 0-48.5 20t-19.5 51 19.5 51 48.5 20q28 0 42-20v17zm133-139q-23 0-35 20v-16h-29v135h29v-76q0-35 29-35 10 0 18 4l9-28q-8-4-21-4zm140 139h29v-190h-29v71q-15-20-43-20t-47.5 20.5-19.5 50.5 19.5 50.5 47.5 20.5q29 0 43-20v17zm78-20l-2 1h-3q-2 1-4 3-3 1-3 4-1 2-1 6 0 3 1 5 0 2 3 4 2 2 4 3t5 1q4 0 6-1 0-1 2-2l2-1q1-1 3-4 1-2 1-5 0-4-1-6-1-1-3-4 0-1-2-2l-2-1q-1 0-3-.5t-3-.5zm360-1253v1280q0 52-38 90t-90 38h-2048q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h2048q52 0 90 38t38 90z">
+                    </path>
+                  </svg>
+                  <span class="flex flex-col">
+                    <span>
+                      Mastercard
+                    </span>
+                  </span>
+                </a>
+                <a href="#"
+                  class="flex items-center px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-100 dark:hover:bg-gray-600"
+                  role="menuitem">
+                  <svg width="20" height="20" fill="currentColor" class="dark:text-gray-100 flex-shrink-0 h-6 w-6 mr-2"
+                    viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M745 906q0 37-25.5 61.5t-62.5 24.5q-29 0-46.5-16t-17.5-44q0-37 25-62.5t62-25.5q28 0 46.5 16.5t18.5 45.5zm785-149q0 42-22 57t-66 15l-32 1 17-107q2-11 13-11h18q22 0 35 2t25 12.5 12 30.5zm351 149q0 36-25.5 61t-61.5 25q-29 0-47-16t-18-44q0-37 25-62.5t62-25.5q28 0 46.5 16.5t18.5 45.5zm-1368-171q0-59-38.5-85.5t-100.5-26.5h-160q-19 0-21 19l-65 408q-1 6 3 11t10 5h76q20 0 22-19l18-110q1-8 7-13t15-6.5 17-1.5 19 1 14 1q86 0 135-48.5t49-134.5zm309 312l41-261q1-6-3-11t-10-5h-76q-14 0-17 33-27-40-95-40-72 0-122.5 54t-50.5 127q0 59 34.5 94t92.5 35q28 0 58-12t48-32q-4 12-4 21 0 16 13 16h69q19 0 22-19zm447-263q0-5-4-9.5t-9-4.5h-77q-11 0-18 10l-106 156-44-150q-5-16-22-16h-75q-5 0-9 4.5t-4 9.5q0 2 19.5 59t42 123 23.5 70q-82 112-82 120 0 13 13 13h77q11 0 18-10l255-368q2-2 2-7zm380-49q0-59-38.5-85.5t-100.5-26.5h-159q-20 0-22 19l-65 408q-1 6 3 11t10 5h82q12 0 16-13l18-116q1-8 7-13t15-6.5 17-1.5 19 1 14 1q86 0 135-48.5t49-134.5zm309 312l41-261q1-6-3-11t-10-5h-76q-14 0-17 33-26-40-95-40-72 0-122.5 54t-50.5 127q0 59 34.5 94t92.5 35q29 0 59-12t47-32q0 1-2 9t-2 12q0 16 13 16h69q19 0 22-19zm218-409v-1q0-14-13-14h-74q-11 0-13 11l-65 416-1 2q0 5 4 9.5t10 4.5h66q19 0 21-19zm-1784 134q-5 35-26 46t-60 11l-33 1 17-107q2-11 13-11h19q40 0 58 11.5t12 48.5zm1912-516v1280q0 52-38 90t-90 38h-2048q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h2048q52 0 90 38t38 90z">
+                    </path>
+                  </svg>
+                  <span class="flex flex-col">
+                    <span>
+                      Paypal
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button
+            class="flex items-center p-2 mx-4 rounded-full hover:bg-gray-600 hover:text-gray-100 border-2 border-gray-900 focus:outline-none"
+            @click="dark = !dark">
+            <svg x-show="!dark" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <svg x-show="dark" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="flex w-screen h-screen bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 overflow-hidden"
+      id="main-app">
+      <div class="flex flex-col w-80 relative overflow-y-auto pl-4" :class="{ 'hidden': !sidebar }">
+        <div class="bg-gray-300 dark:bg-gray-800 min-h-18 rounded-md mt-4"></div>
+        <div class="bg-gray-300 dark:bg-gray-800 min-h-33 rounded-md mt-4"></div>
+        <div class="bg-gray-300 dark:bg-gray-800 min-h-62 rounded-md mt-4"></div>
+        <div class="bg-gray-300 dark:bg-gray-800 min-h-33 rounded-md mt-4"></div>
+        <div class="bg-gray-300 dark:bg-gray-800 min-h-62 rounded-md mt-4"></div>
+        <div class="bg-gray-300 dark:bg-gray-800 min-h-16 rounded-md mt-4"></div>
+        <div class="bg-gray-300 dark:bg-gray-800 min-h-62 rounded-md mt-4"></div>
+        <div class="bg-gray-300 dark:bg-gray-800 min-h-96 rounded-md mt-4"></div>
+      </div>
+      <div class="flex items-center w-6">
+        <span @click="sidebar = !sidebar">
+          <svg class="transition duration-500" :class="{'transform rotate-180': sidebar}"
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:#c8d3df;">
+            <path d="M10.707 17.707L16.414 12 10.707 6.293 9.293 7.707 13.586 12 9.293 16.293z"></path>
+          </svg>
+        </span>
+      </div>
+      <main class="flex flex-grow items-stretch p-4 pl-0" id="main">
+        <div class="bg-gray-300 dark:bg-gray-800 w-full flex flex-1 rounded-md"></div>
+      </main>
+    </div>
+    <div
+      class="fixed flex flex-col top-0 left-0 w-80 h-full bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-200 border-r border-gray-400 dark:border-gray-600"
+      x-transition:enter="transform transition ease-in-out duration-500 sm:duration-500"
+      x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+      x-transition:leave="transform transition ease-in-out duration-500 sm:duration-300"
+      x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" x-spread="_sm_node" x-cloak>
+      <a class="flex items-center w-full px-4 mt-3" href="javascript:;" x-spread="_sm_close">
+        <box-icon name="chevron-left" color="currentColor" size="md"></box-icon>
+        <span class="block w-full text-md font-bold text-center -ml-4">Chat App</span>
+      </a>
+      <div class="w-full px-2 overflow-auto flex flex-col" x-data="{sidemenuActive: window.location.pathname}">
+        <div class="flex flex-col items-center w-full mt-3 border-b border-gray-400 dark:border-gray-700">
+          <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-100" href="/"
+            :class="{ 'bg-gray-300 text-gray-800': sidemenuActive === '/' }">
+            <box-icon name="joystick-button" color="currentColor"></box-icon>
+            <span class="ml-2 text-sm font-medium">Home</span>
+          </a>
+          <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-100">
+            <box-icon name="brush" color="currentColor"></box-icon>
+            <span class="ml-2 text-sm font-medium">Cards</span>
+          </a>
+          <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-100" href="#">
+            <box-icon name="bar-chart-square" color="currentColor"></box-icon>
+            <span class="ml-2 text-sm font-medium">Insights</span>
+          </a>
+          <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-100" href="#">
+            <box-icon name="file" color="currentColor"></box-icon>
+            <span class="ml-2 text-sm font-medium">Docs</span>
+            <span class="ml-auto text-sm bg-red-100 rounded-full px-2 py-px text-red-500 hidden md:block">5</span>
+          </a>
+        </div>
+        <div class="flex flex-col items-center w-full mt-2 border-b border-gray-700">
+          <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-100" href="#">
+            <box-icon name="cart-alt" color="currentColor"></box-icon>
+            <span class="ml-2 text-sm font-medium">Products</span>
+          </a>
+          <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-100" href="#">
+            <box-icon name="cog" color="currentColor"></box-icon>
+            <span class="ml-2 text-sm font-medium">Settings</span>
+          </a>
+          <a class="relative flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-100"
+            href="#">
+            <box-icon name="message-detail" color="currentColor"></box-icon>
+            <span class="ml-2 text-sm font-medium">Messages</span>
+            <span class="absolute top-0 left-0 w-2 h-2 mt-2 ml-2 bg-indigo-500 rounded-full"></span>
+          </a>
+        </div>
+      </div>
+      <a class="flex items-center justify-center w-full h-12 mt-auto bg-gray-400 text-gray-700 dark:bg-gray-600 dark:text-gray-200 hover:bg-gray-500 hover:text-gray-100 "
+        href="#">
+        <box-icon name="user-circle" type="solid" color="currentColor"></box-icon>
+        <span class="ml-2 text-sm font-medium">Account</span>
+      </a>
+    </div>
+    <div x-ref="chat" class="fixed z-50 right-0 bottom-0 w-96 h-96" x-data="_cb()" x-init="_cb_init">
+      <div class="flex h-full justify-end">
+        <div class="relative flex flex-grow flex-col bg-white shadow-md rounded-md" x-show.transition="chatbox"
+          x-ref="chat-box" @keydown.escape="chatbox = false" x-cloak>
+          <div x-ref="chat-main" class="flex flex-col h-full overflow-y-scroll p-2">
+            <template x-for="(val, key) in chatfocus.list" :key="key">
+              <div x-text="val.content" class="rounded-2xl break-all mt-2 p-2"
+                :class="[val.me ? 'w-max rounded-br-none bg-blue-500 text-white text-left ml-auto': 'rounded-bl-none float-none bg-gray-300 mr-auto']">
+              </div>
+            </template>
+          </div>
+          <div x-ref="chat-input" class="flex flex-row items-center bottom-0 my-2 w-full">
+            <div class="ml-2 flex flex-row border-gray items-center w-full border rounded-3xl h-12 px-2">
+              <div class="w-full ml-1">
+                <input type="text" x-ref="message" x-model="chatinput" @keydown.enter="_cb_send()"
+                  class="border rounded-2xl border-transparent w-full focus:outline-none text-sm h-10 flex items-center"
+                  placeholder="Type your message....">
+              </div>
+              <div class="flex flex-row">
+                <button x-ref="emoji-btn"
+                  class="focus:outline-none flex items-center justify-center h-10 w-8 hover:text-green-600 text-green-400 ml-1 mr-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    style="fill:currentColor;">
+                    <path
+                      d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M12,20c-4.411,0-8-3.589-8-8s3.589-8,8-8 s8,3.589,8,8S16.411,20,12,20z">
+                    </path>
+                    <circle cx="8.5" cy="10.5" r="1.5"></circle>
+                    <circle cx="15.493" cy="10.493" r="1.493"></circle>
+                    <path d="M12,18c4,0,5-4,5-4H7C7,14,8,18,12,18z"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="ml-2">
+              <button x-ref="send" @click="_cb_send()"
+                class="flex items-center justify-center h-10 w-10 mr-2 rounded-full bg-gray-200 hover:bg-gray-300 text-blue-500 focus:outline-none">
+                <svg class="w-5 h-5 transform rotate-90 -mr-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div x-show="qrbox" class="absolute top-0 left-0 h-full w-full bg-white p-2">
+            <div x-show="!qrurl" class="text-center text-md font-semibold my-4">Peer initialization ...</div>
+            <div class="transition opacity-0" :class="{'opacity-100': qrurl}">
+              <p class="text-center text-md font-semibold my-4">How to chat secretly?</p>
+              <button type="button" @click="_cb_copy()"
+                class="block w-full rounded-full px-4 py-2 text-sm font-semibold text-blue-500 border-2 border-blue-500 hover:text-white hover:bg-blue-500 focus:outline-none">
+                Copy and send this secret link to anyone who needs to chat.
+              </button>
+              <p class="text-center text-md font-semibold my-4">Or</p>
+              <canvas id="qrchat" class="mx-auto"></canvas>
             </div>
           </div>
         </div>
-        
-        <div class="flex flex-col flex-grow h-0 p-4 overflow-auto">
-          <message v-for="(val, key) in list" :key="key" :value="val.text" :owner="val.owner" :time="val.time" />
+        <div class="flex flex-col-reverse h-full" id="chat-picker">
+          <a class="block relative w-16 h-16 p-1 mx-2 mb-2 cursor-pointer">
+            <span class="z-10 absolute bottom-0 left-6 bg-teal-500 rounded-full" x-spread="_cb_user">
+              <svg class="transition" :class="{'transform rotate-180': userbox}" xmlns="http://www.w3.org/2000/svg"
+                width="16" height="16" viewBox="0 0 24 24" style="fill:currentColor;">
+                <path d="M6.293 13.293L7.707 14.707 12 10.414 16.293 14.707 17.707 13.293 12 7.586z"></path>
+              </svg>
+            </span>
+            <span class="rounded-full flex items-center justify-center h-full bg-white" @click="_cb_qrbox()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                style="fill:currentColor;">
+                <circle cx="9.5" cy="9.5" r="1.5"></circle>
+                <circle cx="14.5" cy="9.5" r="1.5"></circle>
+                <path
+                  d="M12,2C6.486,2,2,5.589,2,10c0,2.908,1.897,5.515,5,6.934V22l5.34-4.004C17.697,17.852,22,14.32,22,10 C22,5.589,17.514,2,12,2z M12,16h-0.333L9,18v-2.417l-0.641-0.247C5.671,14.301,4,12.256,4,10c0-3.309,3.589-6,8-6s8,2.691,8,6 S16.411,16,12,16z">
+                </path>
+              </svg>
+            </span>
+            <span x-show="qrurl" class="absolute top-0 right-2 w-4 h-4 rounded-full bg-red-500 animate-ping"></span>
+          </a>
+          <div class="flex p-2 flex-col-reverse overflow-y-auto" x-spread="_cb_user_main" x-cloak>
+            <template x-for="(val, key) in chatlist" :key="key">
+              <a class="flex-none block relative w-16 h-16 p-1 cursor-pointer" x-bind:title="val.peer"
+                @click="_cb_click(val.peer)">
+                <span class="rounded-full flex items-center justify-center h-full bg-blue-500"
+                  :class="{'ring-2 ring-offset-2 ring-red-500': chatfocus.peer === val.peer}">
+                </span>
+                <span x-show="val.notify"
+                  class="absolute top-0 right-2 w-4 h-4 rounded-full bg-red-500 animate-ping"></span>
+              </a>
+            </template>
+          </div>
         </div>
-
-        <div class="bg-gray-200 p-4 flex">
-          <input v-model="input" v-on:keyup.enter="submit" class="w-full p-2 focus:outline-none text-sm" type="text" placeholder="Username">
-          <button class="flex items-center justify-center border-l-0 py-1 px-2 text-gray-700 bg-blue-300" @click="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M21.426,11.095l-17-8c-0.35-0.164-0.763-0.113-1.061,0.133C3.066,3.473,2.937,3.868,3.03,4.242l1.212,4.849L12,12 l-7.758,2.909L3.03,19.758c-0.094,0.374,0.036,0.77,0.335,1.015C3.548,20.923,3.772,21,4,21c0.145,0,0.29-0.031,0.426-0.095l17-8 C21.776,12.74,22,12.388,22,12S21.776,11.26,21.426,11.095z"></path></svg>
-          </button>
-          
-          <!-- <input v-model="input" v-on:keyup.enter="submit"  class="text-sm rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Type your message…"/>
-		<button class="px-8 rounded-r-lg bg-yellow-400  text-gray-800 font-bold p-4 uppercase border-yellow-500 border-t border-b border-r">Subscribe</button> -->
-          <!-- <input v-model="input" v-on:keyup.enter="submit" class="flex items-center h-10 w-full px-3 text-sm" type="text" placeholder="Type your message…"> -->
-        </div>
-
-        <div class="ml-auto mr-auto flex-row-reverse mr-3 ml-3"></div>
       </div>
     </div>
   </div>
 </body>
-<script src="/js/peerjs.min.js"></script>
+<script src="./js/peerjs.min.js"></script>
 
 
 </html>
